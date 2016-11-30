@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: matthiasbalke/java-node-gradle
+    tag: 'latest'
+
+inputs:
+- name: repo
+- name: version
+
+outputs:
+- name: artifacts
+
+run:
+  path: /bin/sh
+  args: ["repo/ci/tasks/build.sh"]
