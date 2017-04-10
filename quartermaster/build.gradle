@@ -23,8 +23,15 @@ apply plugin: 'com.bmuschko.docker-remote-api'
 dependencies {
     compile(
             project(":packrat"),
+            "org.springframework.boot:spring-boot-starter-hateoas:${version_springBoot}",
+
             "org.springframework.boot:spring-boot-starter-actuator:${version_springBoot}",
-            "org.springframework.boot:spring-boot-starter-hateoas:${version_springBoot}"
+
+            "io.prometheus:simpleclient:${version_prometheus}",
+            "io.prometheus:simpleclient_common:${version_prometheus}",
+            "io.prometheus:simpleclient_hotspot:${version_prometheus}",
+            "io.prometheus:simpleclient_servlet:${version_prometheus}",
+            "io.prometheus:simpleclient_spring_boot:${version_prometheus}"
     )
 
     compileOnly(

@@ -1,5 +1,7 @@
 package com.github.reflectoring;
 
+import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
+import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication
 @EnableMongoRepositories(basePackages = "com.github.reflectoring.infiniboard.packrat")
+@EnablePrometheusEndpoint
+@EnableSpringBootMetricsCollector
 public class Quartermaster {
 
   public static void main(String[] args) {
