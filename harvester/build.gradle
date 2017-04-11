@@ -15,8 +15,15 @@ dependencies {
             project(':packrat'),
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-actuator',
+
+            "io.prometheus:simpleclient:${version_prometheus}",
+            "io.prometheus:simpleclient_common:${version_prometheus}",
+            "io.prometheus:simpleclient_hotspot:${version_prometheus}",
+            "io.prometheus:simpleclient_servlet:${version_prometheus}",
+            "io.prometheus:simpleclient_spring_boot:${version_prometheus}",
+
             "org.quartz-scheduler:quartz:${version_quartz}",
-            "org.apache.httpcomponents:httpclient:${version_httpclient}",
+            "org.apache.httpcomponents:httpclient:${version_httpclient}"
     )
 
     testCompile(

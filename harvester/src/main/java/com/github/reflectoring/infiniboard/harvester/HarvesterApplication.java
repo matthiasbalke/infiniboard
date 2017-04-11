@@ -1,12 +1,16 @@
 package com.github.reflectoring.infiniboard.harvester;
 
+import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
+import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /** application class for harvester service */
 @EnableMongoRepositories(basePackages = "com.github.reflectoring.infiniboard.packrat")
 @SpringBootApplication
+@EnablePrometheusEndpoint
+@EnableSpringBootMetricsCollector
 public class HarvesterApplication {
 
   /**
@@ -15,6 +19,6 @@ public class HarvesterApplication {
    * @param args start parameters
    */
   public static void main(String[] args) throws Exception {
-    new SpringApplicationBuilder().sources(HarvesterApplication.class).run(args);
+    SpringApplication.run(HarvesterApplication.class, args);
   }
 }

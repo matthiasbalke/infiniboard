@@ -20,11 +20,16 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'quartermaster'
 
+    # scheme defaults to 'http'.
     # metrics_path defaults to '/metrics'
     metrics_path: '/prometheus'
-    # scheme defaults to 'http'.
 
     static_configs:
       - targets: ['quartermaster:8090']
-        labels:
-          group: 'quartermaster'
+
+  - job_name: 'harvester'
+
+    metrics_path: '/prometheus'
+
+    static_configs:
+      - targets: ['harvester:9090']

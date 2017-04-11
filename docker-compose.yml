@@ -21,7 +21,10 @@ harvester:
 prometheus:
   image: "prom/prometheus:v1.5.2"
   ports:
-    - "9090:9090"
+    - "9999:9090"
+  links:
+    - harvester
+    - quartermaster
   volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -32,4 +35,4 @@ grafana:
   links:
     - prometheus
   environment:
-    - GF_SECURITY_ADMIN_PASSWORD=secret
+    - GF_SECURITY_ADMIN_PASSWORD=admin
