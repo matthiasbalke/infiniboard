@@ -9,18 +9,27 @@ quartermaster:
     - "8080:8080"
     - "8090:8090"
   links:
-    - mongo:mongo
+    - mongo
 
 harvester:
   image: "reflectoring/harvester:latest"
   ports:
     - "9090:9090"
   links:
-    - mongo:mongo
+    - mongo
 
 prometheus:
-  image: "prom/prometheus:latest"
+  image: "prom/prometheus:v1.5.2"
   ports:
     - "9090:9090"
   volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+grafana:
+  image: "grafana/grafana:4.2.0"
+  ports:
+    - "3000:3000"
+  links:
+    - prometheus
+  environment:
+    - GF_SECURITY_ADMIN_PASSWORD=secret
