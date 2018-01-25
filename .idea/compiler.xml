@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="harvester_main" target="1.8" />
+      <module name="harvester_test" target="1.8" />
+      <module name="packrat_main" target="1.8" />
+      <module name="packrat_test" target="1.8" />
+      <module name="quartermaster_main" target="1.8" />
+      <module name="quartermaster_test" target="1.8" />
+      <module name="test-base_main" target="1.8" />
+      <module name="test-base_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
