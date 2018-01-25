@@ -45,6 +45,7 @@ cmake-build-debug/
 cmake-build-release/
 
 # Mongo Explorer plugin:
+# passwords are getting stored plain text
 .idea/**/mongoSettings.xml
 
 ## File-based project format:
