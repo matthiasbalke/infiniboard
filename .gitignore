@@ -35,10 +35,13 @@ gradle-app.setting
 .idea/**/uiDesigner.xml
 
 # Gradle:
-.idea/**/gradle.xml
+# everyone should be using the gradle wrapper so no different paths
+#.idea/**/gradle.xml
+
 .idea/**/libraries
 .idea/**/artifacts
 .idea/**/modules
+*.iml
 
 # CMake
 cmake-build-debug/
