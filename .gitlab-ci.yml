@@ -25,7 +25,7 @@ stages:
   - release
 
 node:
-  image: circleci/node:6.11.1-browsers
+  image: reflectoring/build-image-node
   stage: frontend
   script: |
     cd dashy
@@ -45,7 +45,7 @@ node:
       - dashy/node_modules
 
 java:
-  image: circleci/openjdk:8-jdk-browsers
+  image: reflectoring/build-image-java
   stage: backend
   services:
     - docker:dind
@@ -123,7 +123,7 @@ java:
 
 deploy:
   stage: release
-  image: circleci/openjdk:8-jdk-browsers
+  image: reflectoring/build-image-java
   services:
     - docker:dind
   before_script:
